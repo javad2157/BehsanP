@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
+deploymentName: exchange-front
 image:
   repository: "192.168.236.156:8083/exchange-frontend"
   # Overrides the image tag whose default is the chart appVersion.
@@ -26,7 +26,6 @@ podSecurityContext: { }
 securityContext: { }
 
 service:
-  name: exchange-front
   type: ClusterIP
   port: 80
   targetPort: 3001
