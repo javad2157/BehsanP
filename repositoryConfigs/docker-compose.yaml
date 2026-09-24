@@ -1,0 +1,24 @@
+# docker-compose.yml - Nexus Repository Manager production deployment
+services:
+  nexus:
+    image: sonatype/nexus3:3.96.0
+    container_name: nexus
+    ports:
+      - "8081:8081"   # Web UI and API
+      - "8082:8082"   # Docker hosted registry
+      - "8083:8083"   # Docker proxy registry
+    volumes:
+      - nexus-data:/nexus-data
+    environment:
+      # JVM memory settings - adjust based on available RAM
+      - INSTALL4J_ADD_VM_PARAMS=-Xms4g -Xmx8g -XX:MaxDirectMemorySize=2g
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/service/rest/v1/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+
+volumes:
+  nexus-data:
