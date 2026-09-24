@@ -30,4 +30,3 @@ spec:
                   name: {{ $.Values.secretName }}
                   key: {{ .key }}
             {{- end }}
-          
