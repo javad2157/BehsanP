@@ -1,6 +1,6 @@
 
 replicaCount: 1
-
+deploymentName: exchange-backend
 image:
   repository: "192.168.236.156:8083/exchange-backend"
   pullPolicy: IfNotPresent
