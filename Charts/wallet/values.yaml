@@ -1,0 +1,182 @@
+
+replicaCount: 1
+deploymentName: wallet
+image:
+  repository: "192.168.236.156:8083/wallet-backend"
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "production-7699c86b"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  name: wallet
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+
+
+ingress:
+  enabled: false
+  hostname: wallet.axoex.ir
+  className: nginx
+  className: traefik
+  annotations: {}
+  paths:
+    - path: /
+      pathType: Prefix
+      service:
+        port: 80
+
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+
+# affinity: {}
+secretName: wallet-secrets
+environmentVariables:
+  - name: AUTH_URL
+    key: AUTH_URL
+  - name: AXON_SADERAT_BANK_ACCOUNT_INFO
+    key: AXON_SADERAT_BANK_ACCOUNT_INFO
+  - name: AXON_SHAHIN_CLIENT_ID
+    key: AXON_SHAHIN_CLIENT_ID
+  - name: AXON_SHAHIN_CLIENT_SECRET
+    key: AXON_SHAHIN_CLIENT_SECRET
+  - name: CORE_SQLSERVER_DBNAME
+    key: CORE_SQLSERVER_DBNAME
+  - name: CORE_SQLSERVER_HOST
+    key: CORE_SQLSERVER_HOST
+  - name: CORE_SQLSERVER_PASS
+    key: CORE_SQLSERVER_PASS
+  - name: CORE_SQLSERVER_USER
+    key: CORE_SQLSERVER_USER
+  - name: DB_MSSQL_SERVER
+    key: DB_MSSQL_SERVER
+  - name: ENB_IPG_MERCHANT
+    key: ENB_IPG_MERCHANT
+  - name: ENB_IPG_MERCHANT_PASS
+    key: ENB_IPG_MERCHANT_PASS
+  - name: GARDESHGARI_LOGIN_URL
+    key: GARDESHGARI_LOGIN_URL
+  - name: GARDESHGARI_PASSWORD
+    key: GARDESHGARI_PASSWORD
+  - name: GARDESHGARI_SERVICE_AUTHORIZATION
+    key: GARDESHGARI_SERVICE_AUTHORIZATION
+  - name: GARDESHGARI_USERNAME
+    key: GARDESHGARI_USERNAME
+  - name: GARDESHGARI_USERNAME_SOAP
+    key: GARDESHGARI_USERNAME_SOAP
+  - name: HUB_TOKEN
+    key: HUB_TOKEN
+  - name: MELLI_ACCOUNT_NUMBER
+    key: MELLI_ACCOUNT_NUMBER
+  - name: MELLI_CLIENT_KEY
+    key: MELLI_CLIENT_KEY
+  - name: MELLI_CLIENT_SECRET
+    key: MELLI_CLIENT_SECRET
+  - name: MODE
+    key: MODE
+  - name: PORT
+    key: PORT
+  - name: PRODUCT_MODE
+    key: PRODUCT_MODE
+  - name: PROJECT_NAME
+    key: PROJECT_NAME
+  - name: RAHYAB_FROM
+    key: RAHYAB_FROM
+  - name: RAHYAB_PASSWORD
+    key: RAHYAB_PASSWORD
+  - name: RAHYAB_USERNAME
+    key: RAHYAB_USERNAME
+  - name: RBMQ_QUEUE
+    key: RBMQ_QUEUE
+  - name: RBMQ_URL
+    key: RBMQ_URL
+  - name: REDIS_CONNECTION_STRING
+    key: REDIS_CONNECTION_STRING
+  - name: REFAH_ACCOUNT_NUMBER
+    key: REFAH_ACCOUNT_NUMBER
+  - name: REFAH_CLIENT_ID
+    key: REFAH_CLIENT_ID
+  - name: REFAH_CLIENT_SECRET
+    key: REFAH_CLIENT_SECRET
+  - name: REFAH_PASSWORD
+    key: REFAH_PASSWORD
+  - name: REFAH_PASSWORD2
+    key: REFAH_PASSWORD2
+  - name: REFAH_PASSWORD_TRANSACTION
+    key: REFAH_PASSWORD_TRANSACTION
+  - name: REFAH_USERNAME
+    key: REFAH_USERNAME
+  - name: REFAH_USERNAME_TRANSACTION
+    key: REFAH_USERNAME_TRANSACTION
+  - name: SATPAY_SADERAT_BANK_ACCOUNT_INFO
+    key: SATPAY_SADERAT_BANK_ACCOUNT_INFO
+  - name: SATPAY_SHAHIN_CLIENT_ID
+    key: SATPAY_SHAHIN_CLIENT_ID
+  - name: SATPAY_SHAHIN_CLIENT_SECRET
+    key: SATPAY_SHAHIN_CLIENT_SECRET
+  - name: SENTRY_DNS
+    key: SENTRY_DNS
+  - name: SHAPARAK_TOKEN
+    key: SHAPARAK_TOKEN
+  - name: base_url_docs
+    key: base_url_docs
+  - name: client_id
+    key: client_id
+  - name: client_secret
+    key: client_secret
+  - name: companyName
+    key: companyName
+  - name: grant_type
+    key: grant_type
+  - name: ibanLimit
+    key: ibanLimit
+  - name: refahPan
+    key: refahPan
