@@ -81,6 +81,14 @@ secretName: auth-secrets
 environmentVariables:
   - name: DB_MSSQL_SERVER
     key: DB_MSSQL_SERVER
+  - name: DB_MSSQL_USER
+    key: DB_MSSQL_USER
+  - name: DB_MSSQL_PASS
+    key: DB_MSSQL_PASS
+  - name: DB_MSSQL_PORT
+    key: DB_MSSQL_PORT
+  - name: DB_MSSQL_DB_auth
+    key: DB_MSSQL_DB_auth
   - name: JWT_REFRESH_SECRET
     key: JWT_REFRESH_SECRET
   - name: JWT_SECRET
