@@ -98,6 +98,12 @@ environmentVariables:
     key: CORE_SQLSERVER_USER
   - name: DB_MSSQL_SERVER
     key: DB_MSSQL_SERVER
+  - name: DB_MSSQL_USER
+    key: DB_MSSQL_USER
+  - name: DB_MSSQL_PASS
+    key: DB_MSSQL_PASS
+  - name: DB_MSSQL_PORT
+    key: DB_MSSQL_PORT
   - name: ENB_IPG_MERCHANT
     key: ENB_IPG_MERCHANT
   - name: ENB_IPG_MERCHANT_PASS
