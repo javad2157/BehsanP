@@ -144,6 +144,8 @@ environmentVariables:
     key: RBMQ_QUEUE
   - name: RBMQ_URL
     key: RBMQ_URL
+  - name: RBMQ_PORT
+    key: RBMQ_PORT
   - name: REDIS_CONNECTION_STRING
     key: REDIS_CONNECTION_STRING
   - name: REFAH_ACCOUNT_NUMBER
