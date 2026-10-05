@@ -33,7 +33,7 @@ service:
 
 ingress:
   enabled: true
-  hostname: axoex.ir
+  hostname: axoexx.ir
   className: traefik
   annotations: {}
   paths:
