@@ -39,8 +39,8 @@ service:
 
 
 ingress:
-  enabled: false
-  hostname: bsaraf.axoex.ir
+  enabled: true
+  hostname: bsaraf.axoexx.ir
   className: nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
