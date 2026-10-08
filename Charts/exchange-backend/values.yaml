@@ -142,6 +142,6 @@ environmentVariables:
     key: SQL_DB_PASSWORD
   - name: SQL_DB_USER
     key: SQL_DB_USER
-#  - name: SENTRY_DSN
-#    key: SENTRY_DSN
+  - name: SENTRY_DSN
+    key: SENTRY_DSN
 
