@@ -41,7 +41,7 @@ service:
 ingress:
   enabled: true
 
-  hostname: bsaraf.axoexx.ir
+  hostname: bsaraf.behestanrh.net
 
   className: traefik
 
@@ -51,7 +51,7 @@ ingress:
 
   tls:
     - hosts:
-        - bsaraf.axoexx.ir
+        - bsaraf.behestanrh.net
       secretName: bsaraf-tls
 
   paths:
