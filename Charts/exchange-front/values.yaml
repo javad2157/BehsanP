@@ -7,7 +7,7 @@ deploymentName: exchange-front
 image:
   repository: "192.168.236.156:8083/exchange-frontend-kashef"
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "production-78f32c1d"
+  tag: "production-5d6795ca"
 
 imagePullSecrets: [ ]
 nameOverride: ""

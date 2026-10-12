@@ -52,7 +52,7 @@ ingress:
   tls:
     - hosts:
         - bsaraf.behestanrh.net
-      secretName: bsaraf-tls
+      secretName: bsaraf-tls2
 
   paths:
     - path: /
