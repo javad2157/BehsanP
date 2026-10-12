@@ -45,14 +45,14 @@ ingress:
 
   className: traefik
 
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
+  annotations: {}
+    # traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    # traefik.ingress.kubernetes.io/router.tls: "true"
 
-  tls:
-    - hosts:
-        - bsaraf.behestanrh.net
-      secretName: bsaraf-tls2
+  # tls:
+  #   - hosts:
+  #       - bsaraf.behestanrh.net
+  #     secretName: bsaraf-tls2
 
   paths:
     - path: /
